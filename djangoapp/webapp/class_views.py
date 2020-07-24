@@ -2,12 +2,11 @@ from django.contrib.auth.views import FormView
 from django.views.generic import TemplateView, View
 from django.contrib.auth import authenticate, login, logout, get_user_model
 from django.shortcuts import redirect #, render
+# from django.urls import reverse
+# from django.http import HttpResponseRedirect#, HttpResponse
+from .models import CustomUser
 # from django.contrib.auth.decorators import login_required
-
-# from django.http import HttpResponse, HttpResponseRedirect
-
-from .forms import LoginForm, SignUpForm
-
+from .forms import LoginForm, SignUpForm, ProfilePictureForm
 
 class LoginView(FormView):
     form_class = LoginForm
@@ -52,3 +51,17 @@ class SignUpView(FormView):
         user.save()
 
         return redirect('/webapp/log-in/')
+
+
+# class UploadProfile(FormView):
+#     model = CustomUser
+#     template_name = 'webapp/profile.html'
+#     form_class = ProfilePictureForm
+#     fields = ['profile_photo']
+#     USER = get_user_model()
+
+#     def form_valid(self, form):
+#         user = self.USER(profile_photo=form.cleaned_data['profile_photo'])
+#         user.save()
+
+#         return redirect('webapp/profile/')

@@ -27,4 +27,3 @@ urlpatterns = [
     # path('logout/', LogoutView.as_view(template_name='login.html', name='logout')),
     path('webapp/', include('webapp.urls', namespace='webapp')),
 ]
-

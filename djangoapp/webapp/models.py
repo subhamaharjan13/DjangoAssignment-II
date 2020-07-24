@@ -10,3 +10,8 @@ class CustomUser(models.Model):
 
     def __str__(self):
         return self.username
+
+
+class Image(models.Model): 
+    photo = models.ImageField(upload_to='static/images/profile_pics',
+                                      default='static/images/nophoto.png')

@@ -1,5 +1,7 @@
 from django import forms
 from django.contrib.auth.models import User
+from .models import CustomUser
+from django.forms import ModelForm
 
 class LoginForm(forms.Form):
     username = forms.CharField(max_length=150)
@@ -24,3 +26,9 @@ class SignUpForm(forms.Form):
         confirm_password = self.cleaned_data['confirm_password']
         if password != confirm_password:
             raise forms.ValidationError("your passwords do not match")
+
+
+class ProfilePictureForm(ModelForm):
+    class Meta:
+        model = CustomUser
+        fields = ['profile_photo']
