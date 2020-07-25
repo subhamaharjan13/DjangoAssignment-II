@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth.models import User
-from .models import CustomUser
+from .models import CustomUser, Image
 from django.forms import ModelForm
 
 class LoginForm(forms.Form):
@@ -30,5 +30,5 @@ class SignUpForm(forms.Form):
 
 class ProfilePictureForm(ModelForm):
     class Meta:
-        model = CustomUser
-        fields = ['profile_photo']
+        model = Image
+        fields = ('title', 'photo')

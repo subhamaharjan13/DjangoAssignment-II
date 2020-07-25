@@ -12,6 +12,7 @@ class CustomUser(models.Model):
         return self.username
 
 
-class Image(models.Model): 
-    photo = models.ImageField(upload_to='static/images/profile_pics',
-                                      default='static/images/nophoto.png')
+class Image(models.Model):
+    title = models.CharField(max_length=200)
+    photo = models.ImageField(upload_to='profile_pics',
+                              default='nophoto.png')

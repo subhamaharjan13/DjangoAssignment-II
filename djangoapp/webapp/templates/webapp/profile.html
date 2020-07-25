@@ -11,17 +11,7 @@
     Email: {{ request.user.email }}<br>
     Username: {{ request.user.username }} <br><br>
 
-    <!-- <form method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        <h3>Upload your profile photo</h3><br>
-        Image: <input type="file" name="image"><br>
-        <button type="submit">Post</button>
-    </form> -->
-    <form method = "post" enctype="multipart/form-data"> 
-        {% csrf_token %} 
-        {{ form.as_p }} 
-        <button type="submit">Upload</button> 
-    </form> 
+    <a href="/webapp/profile-pic/">Upload a picture</a>
     <br>
     <a href="/webapp/logout/">Logout</a>
 </body>
